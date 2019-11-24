@@ -1,0 +1,16 @@
+body {
+    background-image: url("fondAccueilSuperMario.jpg");
+    
+}
+h1 {
+    font-family: url("SuperMario256.ttf");
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; 
+    }
+}
+
