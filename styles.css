@@ -1,24 +1,10 @@
+/*page 1  accueil*/
 .body-page-1 {
     background-image: url("fondAccueilSuperMario.jpg");
     background-position: center;
     height: 100vh;
     margin: 0;
 }
-
-.body-page-2 {
-    background-image: url("fondAccueilSuperMario.jpg");
-    background-position: center;
-    height: 100vh;
-    margin: 0;
-}
-
-
-
-.style-family {
-    font-family:super_mario_256regular, sans-serif;
-    font-size:3em;
-}
-
 .main-page-1 {
     display: flex;
     flex-direction: column;
@@ -27,17 +13,27 @@
     justify-content: center;
 }
 
+.text-centre-page-1 {
+    margin-right: 10vh;
+    margin-bottom: 10vh;
+}
+
+
+
+
+/*page 2  pageChoixJeu*/
+.body-page-2 {
+    background-image: url("fondAccueilSuperMario.jpg");
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
 .main-page-2 {
     display: flex;
     flex-direction: column;
     height: 100%;
     align-items: center;
-
-}
-
-
-.h1-page-1 {
-
 }
 
 .container_form {
@@ -45,11 +41,30 @@
     flex-direction: column;
 }
 
+.image-1-page-1 {
+    width: 50vh;
+    height: auto;
+    display: flex;
+    margin: auto;
+}
+/*page 3  pageJeu1*/
 
+
+/*toutes les pages */
+
+.style-family {
+    font-family:super_mario_256regular, sans-serif;
+    font-size:3em;
+}
 
 @media screen and (max-width: 800px) {
-    .left, .main, .right {
+     .main {
       width: 100%; 
+    }
+    .text-centre-page-1 {
+        margin-right: auto;
+        margin-bottom: auto;
+        text-align: center;
     }
 }
 
