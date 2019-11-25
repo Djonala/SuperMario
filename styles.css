@@ -1,9 +1,48 @@
-body {
+.body-page-1 {
     background-image: url("fondAccueilSuperMario.jpg");
-    
+    background-position: center;
+    height: 100vh;
+    margin: 0;
 }
-h1 {
-    font-family: url("SuperMario256.ttf");
+
+.body-page-2 {
+    background-image: url("fondAccueilSuperMario.jpg");
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.style-family {
+    font-family:super_mario_256regular, sans-serif;
+    font-size:3em;
+}
+
+.main-page-1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-page-2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+}
+
+
+.h1-page-1 {
+
+}
+
+.container_form {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -14,3 +53,11 @@ h1 {
     }
 }
 
+@font-face {
+    font-family: 'super_mario_256regular';
+    src: url('supermario256-webfont.woff2') format('woff2'),
+         url('supermario256-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
