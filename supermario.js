@@ -1,7 +1,10 @@
 
                             // écrit dans la console du navigateur dès que le script est chargé
                             // dans le <head> du html
-                            console.log('ça marche !');
+console.log('ça marche !');
+
+
+
 
                             /** ----------------------------------------------------------------------------
                              * PARTIE 1 : réagir à l'événement de clique sur le bouton du formulaire
@@ -48,7 +51,12 @@ function onContentLoaded() {
                             // inscrit la fonction onFormSubmit à l'événement Submit
                             // envoyé par le navigateur lorsque le bouton <input type="submit"> 
                             // est actionné par l'utilisateur
+            
     form.addEventListener('submit', onFormSubmit);
+
+    const boutonImage = document.querySelector('input[type="image" i]');
+    console.log('mesBoutonsImage',boutonImage);
+    boutonImage.addEventListener('input', onFormImage);
 }
 
 
@@ -62,41 +70,40 @@ function onFormSubmit(event) {
                             // en appelant preventDefault() sur l'événement du navigateur pour lui indiquer
                             // de ne rien faire lorsque le formulaire est soumis.
     event.preventDefault();
-
                             // Ensuite, on récupère à la main les informations saisie dans les input
     const prenom = document.getElementById('prenom');
-    console.log(prenom.value);
     const nom = document.getElementById('nom');
-    console.log(nom.value);
-    const email = document.getElementById('email');
-    console.log(email.value);
-                            // Voilà ! ^^
+    const email = document.getElementById('email');                          
     
     const span1 = document.getElementById('span1');
-    messageErrorUndefinied(prenom,span1);
-    if (prenom.value.lengh < 2) {
-        span1.innerHTML = '*Merci de saisir votre prénom COMPLET'
-    }
+    messageErrorUndefined(prenom,span1);
+    messageErrorTooStrong(prenom,span1);
 
     const span2 = document.getElementById('span2');
-    messageErrorUndefinied(nom,span2);
-    if (nom.value.lengh < 2) {
-        span2.innerHTML = '*Merci de saisir votre nom COMPLET'
-    }
+    messageErrorUndefined(nom,span2);
+    messageErrorTooStrong(nom,span2);
 
     const span3 = document.getElementById('span3');
-    if (!email.value) {
-        span3.innerHTML = '*Valeur obligatoire.';
+    messageErrorUndefined(email,span3);
+    messageErrorTooStrong(email,span3);
+}
+
+// Fonction qui recupère l'élement et la span correspondante et applique un 
+// message en cas de champ vide
+function messageErrorUndefined(input,span) {
+    if (!input.value) {
+        span.innerHTML='* Saisie obligatoire.';
     }
-
-
-
-    // Fonction qui recupère l'élement et la span correspondante et applique un 
-    // message en cas de champ vide
-    function messageErrorUndefinied(input,span) {
-        if (!input.value) {
-            span.innerHTML='*Valeur obligatoire.';
-        }
+}
+// Fonction qui recupère l'élement et la span correspondante et applique une
+// une erreur en cas de champ trop court
+function messageErrorTooStrong(input,span) {
+    if (input.value.lengh < 2){
+        span.innerHTML='* Valeur trop courte.';
     }
+}
 
+function onFormImage(event){
+    event.preventDefault();
+    console.log('je sui dans la fonction onformImage');
 }
